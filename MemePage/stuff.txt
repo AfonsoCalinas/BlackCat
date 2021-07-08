@@ -1,0 +1,102 @@
+#------login.php------#
+
+if (isset($_GET["error"])) {
+  // Agora aqui em baixo vamos dar todas as opções de erro que demos em login.inc.php e functions.inc.php
+  if ($_GET["error"] == "emptyinput") {
+    echo "<p>Fill in all fields!</p>";
+  } elseif ($_GET["error"] == "wronglogin") {
+    echo "<p>Incorrect login information.</p>";
+  } elseif ($_GET["error"] == "wrongpassword") {
+    echo "<p>Incorrect password.</p>";
+  }
+}
+
+#------login.php------#
+
+
+#----profile.php----#
+
+  <!--<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h2 class="h2 text-center">Profile</h2>
+        <?php /*profileDisplay($conn); */?>
+        <h4 class="h4"><?php /*echo $_SESSION['useruid'] */?></h4>
+        <form action='upload.php' method='POST' enctype='multipart/form-data'>
+          <div class="form-group">
+            <input class="form-control-file border" type='file' name='file'>
+          </div>
+          <button class="btn btn-primary" type='submit' name='submit'>Upload</button>
+        </form>
+      </div>
+      <div class="col-md-9">
+      </div>
+    </div>-->
+
+    <div class="row">
+      <div class="col-md-3">
+        <center>
+          <h2 class="h2 mb-3 mt-3 mb-5">Profile</h2>
+          <?php profileDisplay($conn); ?>
+        </center>
+        <h4 class="h4 mt-3 ml-5">User: <?php echo $_SESSION['useruid']; ?></h4>
+        <div class="m-5">
+          <form action='upload.php' method='POST' enctype='multipart/form-data' class="form-inline">
+            <div class="form-group">
+              <input class="form-control-file border" type='file' name='file'>
+            </div>
+            <center>
+            <button class="btn btn-primary mt-2" type='submit' name='submit' style="width: 310px;" >Upload</button>
+            </center>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+
+
+
+    <div class="col-md-9" style="background-color: brown;">
+        <h2 class="h2 text-center mt-3 mb-5">Create Publication</h2>
+        <div class="container">
+          <div class="col-md-3 row m-auto">
+            <div class="col">
+              <a href="#">
+                <h4 class="h4">Video</h4>
+              </a>
+            </div>
+            <div class="col"></div>
+            <div class="col">
+              <a href="#">
+                <h4 class="h4">Image</h4>
+              </a>
+            </div>
+          </div>
+        </div><br><br>
+        <div class="container m-auto">
+          <form action='' method='POST' enctype='multipart/form-data'>
+            <div class="form-group row">
+              <label for="title_meme" class="col-sm-3 col-form-label"><b>Title</b></label>
+              <div class="col-sm-9">
+                <input class="form-control " type='text' name='title_meme' required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="pub_meme" class="col-sm-3 col-form-label"><b>Upload Image</b></label>
+              <div class="col-sm-9">
+                <input class="form-control-file border " type='file' name='pub_meme' required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="desc_meme" class="col-sm-3 col-form-label"><b>Description</b></label>
+              <div class="col-sm-9">
+                <input class="form-control " type='text' name='desc_meme'>
+              </div>
+            </div>
+            <button class="btn btn-primary float-right mb-5" type='submit' name='up_meme'>Upload</button>
+          </form>
+        </div>
+      </div>
+
+#----profile.php----#
+
